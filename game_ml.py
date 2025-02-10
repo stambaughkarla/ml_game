@@ -2,6 +2,7 @@ import streamlit as st
 import random
 
 # Questions database
+#add questions to this karl
 questions = {
     "Feature Engineering": [
         {"question": "Which technique is commonly used to handle missing values?",
@@ -38,7 +39,7 @@ if "score" not in st.session_state:
     st.session_state["score"] = 0
 
 # Sidebar for topic selection
-topic = st.sidebar.radio("Select a topic:", list(questions.keys()))
+topic = st.sidebar.selectbox("Select a topic:", list(questions.keys()))
 
 # If topic changes, reset question index
 if topic != st.session_state["selected_topic"]:
@@ -49,7 +50,7 @@ if topic != st.session_state["selected_topic"]:
 current_topic = st.session_state["selected_topic"]
 current_question = questions[current_topic][st.session_state["question_index"]]
 
-st.title("ML Model Selection Game")
+st.title("KTP's ML Model Selection Game")
 st.header(f"Topic: {current_topic}")
 st.subheader(current_question["question"])
 
@@ -59,12 +60,13 @@ selected_answer = st.radio("Choose an answer:", current_question["options"])
 # Submit button
 if st.button("Submit"):
     if selected_answer == current_question["answer"]:
-        st.success("Correct!")
+        st.success("Correct, nice thinking KTP!")
         st.session_state["score"] += 1
     else:
         st.error(f"Incorrect. The correct answer is {current_question['answer']}")
     
     # Move to next question or reset
+    #fix thisssssss
     if st.session_state["question_index"] < len(questions[current_topic]) - 1:
         st.session_state["question_index"] += 1
     else:
