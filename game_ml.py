@@ -87,6 +87,7 @@ if "score" not in st.session_state:
 # Sidebar: select topic
 with st.sidebar:
     #st.sidebar.header("Select a topic:")
+    st.sidebar.header("Kappa Theta Pi")
     topic = st.sidebar.selectbox("Select a topic:", list(questions.keys()))
 
     # If topic changes, reset question index to start from beggining againnn
@@ -100,7 +101,7 @@ current_question = questions[current_topic][st.session_state["question_index"]]
 
 st.title("KTP's Machine Learning Trivia")
 st.image("img/ml_foto.png")
-st.sidebar.markdown("<h1 style='font-size: 30px; margin-top: -161px; color: white;'>Kappa Theta Pi</h1>", unsafe_allow_html=True)
+#st.sidebar.markdown("<h1 style='font-size: 30px; margin-top: -145px; color: white;'>Kappa Theta Pi</h1>", unsafe_allow_html=True)
 #st.logo("img/KTP (1).png", size= "large", icon_image= "img/KTP (1).png")
 st.sidebar.markdown("<h1 style='font-size: 10px; margin-top: 610px; color: white;'>Developed by: Karla Stambaugh :)</h1>", unsafe_allow_html=True)
 
