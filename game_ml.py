@@ -102,6 +102,8 @@ st.title("KTP's Machine Learning Trivia")
 st.image("img/ml_foto.png")
 st.sidebar.markdown("<h1 style='font-size: 30px; margin-top: -161px; color: white;'>Kappa Theta Pi</h1>", unsafe_allow_html=True)
 #st.logo("img/KTP (1).png", size= "large", icon_image= "img/KTP (1).png")
+st.sidebar.markdown("<h1 style='font-size: 10px; margin-top: 610px; color: white;'>Developed by: Karla Stambaugh :)</h1>", unsafe_allow_html=True)
+
 st.header(f"Topic: {current_topic}")
 st.subheader(current_question["question"])
 
@@ -122,6 +124,41 @@ if st.button("Submit"):
                 current_question = questions[current_topic][st.session_state["question_index"]]
     else:
         st.error(f"Incorrect. Please try again!")
+        
+        
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
     
