@@ -100,7 +100,7 @@ current_question = questions[current_topic][st.session_state["question_index"]]
 
 st.title("KTP's Machine Learning Trivia Game")
 st.image("img/ml_foto.png")
-st.sidebar.markdown("<h1 style='font-size: 30px; margin-top: -160px; color: white;'>Kappa Theta Pi</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='font-size: 30px; margin-top: -161px; color: white;'>Kappa Theta Pi</h1>", unsafe_allow_html=True)
 #st.logo("img/KTP (1).png", size= "large", icon_image= "img/KTP (1).png")
 st.header(f"Topic: {current_topic}")
 st.subheader(current_question["question"])
