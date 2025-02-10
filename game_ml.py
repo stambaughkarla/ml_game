@@ -98,7 +98,7 @@ if topic != st.session_state["selected_topic"]:
 current_topic = st.session_state["selected_topic"]
 current_question = questions[current_topic][st.session_state["question_index"]]
 
-st.title("KTP's Machine Learning Trivia Game")
+st.title("KTP's Machine Learning Trivia")
 st.image("img/ml_foto.png")
 st.sidebar.markdown("<h1 style='font-size: 30px; margin-top: -161px; color: white;'>Kappa Theta Pi</h1>", unsafe_allow_html=True)
 #st.logo("img/KTP (1).png", size= "large", icon_image= "img/KTP (1).png")
@@ -106,7 +106,7 @@ st.header(f"Topic: {current_topic}")
 st.subheader(current_question["question"])
 
 # Display answer choices
-selected_answer = st.radio("Choose an answer:", current_question["options"])
+selected_answer = st.radio("Choose an answer: ", current_question["options"])
 
 # Submit button
 if st.button("Submit"):
@@ -114,16 +114,17 @@ if st.button("Submit"):
         st.success("Correct, nice thinking KTP!") 
         st.balloons()
         st.session_state["score"] += 1
+        # Move to next question or reset
+        #fix thisss
+        if st.session_state["question_index"] < len(questions[current_topic]) - 1:
+            st.session_state["question_index"] += 1
+            if st.button("Next Question"):
+                current_question = questions[current_topic][st.session_state["question_index"]]
     else:
-        st.error(f"Incorrect. The correct answer is {current_question['answer']}")
+        st.error(f"Incorrect. Please try again!")
 
     
-    # Move to next question or reset
-    #fix thisss
-    if st.session_state["question_index"] < len(questions[current_topic]) - 1:
-        st.session_state["question_index"] += 1
-        if st.button("Next Question"):
-            current_question = questions[current_topic][st.session_state["question_index"]]
+    
             
             
         
