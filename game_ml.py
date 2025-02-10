@@ -84,17 +84,17 @@ if "question_index" not in st.session_state:
 if "score" not in st.session_state:
     st.session_state["score"] = 0
 
-# Sidebar for topic selection
+# Sidebar: select topic
 with st.sidebar:
     #st.sidebar.header("Select a topic:")
     topic = st.sidebar.selectbox("Select a topic:", list(questions.keys()))
 
-# If topic changes, reset question index
-if topic != st.session_state["selected_topic"]:
-    st.session_state["selected_topic"] = topic
-    st.session_state["question_index"] = 0
+    # If topic changes, reset question index to start from beggining againnn
+    if topic != st.session_state["selected_topic"]:
+        st.session_state["selected_topic"] = topic
+        st.session_state["question_index"] = 0
 
-# Get current question
+# Get current question to show
 current_topic = st.session_state["selected_topic"]
 current_question = questions[current_topic][st.session_state["question_index"]]
 
